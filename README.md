@@ -8,7 +8,7 @@ The Budget Tracker is a Progressive Web App (PWA) that that allows you to add ex
 ![Desktop](./public/gifs/demo.gif)
 
 ## Live Link
-- Launch the application [here](---)
+Launch the application [here](---)
 
 ## Instructions for local install
 
@@ -25,6 +25,7 @@ npm start
 - JavaScript
 - Express
 - Node.js
+- Indexed DB
 - MongoDB
 - Mongoose
 

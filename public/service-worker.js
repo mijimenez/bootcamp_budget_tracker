@@ -23,3 +23,21 @@ self.addEventListener("install", function(evt) {
     self.skipWaiting();
 });
 
+// Activate - Takes a look at caches created and once activation is complete, check which caches exist. If keys for caches don’t match the names we created above, then delete them. Service worker comes online and clean them up.
+self.addEventListener("activate", function(evt) {
+    evt.waitUntil(
+      caches.keys().then(keyList => {
+        return Promise.all(
+          keyList.map(key => {
+            if (key !== CACHE_NAME && key !== DATA_CACHE_NAME) {
+              console.log("Removing old cache data", key);
+              return caches.delete(key);
+            }
+          })
+        );
+      })
+    );
+  
+    self.clients.claim();
+});
+

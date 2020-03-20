@@ -1,3 +1,5 @@
+// If the user makes a transaction while offline, the data will be saved to IndexedDB and will be synced to the MongoDB later once online again.
+
 let db;
 // create a new db request for a "budget" database.
 const request = indexedDB.open("budget", 1);

@@ -86,6 +86,7 @@ function sendTransaction(isAdding) {
   // validate form
   if (nameEl.value === "" || amountEl.value === "") {
     errorEl.textContent = "Missing Information";
+    errorEl.setAttribute("style", "margin-top: 1em");
     return;
   }
   else {
@@ -169,4 +170,5 @@ window.addEventListener('offline', updateOnlineStatus);
 function updateOnlineStatus(event) {
   var condition = navigator.onLine ? "online" : "offline";
   document.body.className = condition;
+  
 }

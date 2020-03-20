@@ -1,10 +1,8 @@
 body {
-  font-size: 120%;
   font-family: Arial;
 }
 
 button, input {
-  font-size: 100%;
   font-family: Arial;
 }
 
@@ -24,6 +22,8 @@ tr:nth-child(even) {
 
 .error {
   color: red;
+  font-size: .85em;
+  margin: 0;
 }
 
 .wrapper {
@@ -32,14 +32,45 @@ tr:nth-child(even) {
   text-align: center;
 }
 
+.total-container {
+  padding: 5%;
+}
+
 .total {
-  font-size: 150%;
-  text-decoration: underline;
+  font-size: 2.2em;
 }
 
 .form {
-  margin-top: 25px;
-  width: 100%;
+  width: 90%;
+  margin: auto;
+  max-width: 600px;
+  margin-bottom: 8%;
+}
+
+.form .form-fields {
+  margin-bottom: 1em;
+}
+
+.form .form-fields input:first-child {
+  margin-bottom: 1em;
+}
+
+@media (min-width: 600px) {
+  .form .form-fields input:first-child {
+    margin: 0 1em 0 0;
+  }
+}
+
+@media (min-width: 600px) {
+  .form .form-fields {
+    display: flex;
+  }
+}
+
+@media (min-width: 600px) {
+  .form .form-fields input {
+    width: 50%;
+  }
 }
 
 .transactions {
@@ -48,15 +79,31 @@ tr:nth-child(even) {
   overflow: auto;
   width: 90%;
   margin: 0 auto;
+  margin-bottom: 5%;
 }
 
 /* Offline/online message */
+#connectionMessage:after {
+  display: block;
+  padding: .5em;
+  font-size: .85em;
+  text-align: center;
+}
 .default #connectionMessage:after{
-  content:"Track your budget online or offline";
+  content:"Track your budget online or offline.";
+  color: #004085;
+  background-color: #cce5ff;
+  border-color: #b8daff;
 }
 .offline #connectionMessage:after{
-  content:"You are offline";
+  content:"You are offline. Data will be saved once back online.";
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
 }
 .online #connectionMessage:after{
-  content:"You are back online";
+  content:"You are back online.";
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
 }

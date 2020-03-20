@@ -160,3 +160,13 @@ if ("serviceWorker" in navigator) {
     });
   });
 }
+
+// Detect if user if offline
+// Detect offline/online mode in simple way.
+window.addEventListener('online',  updateOnlineStatus);
+window.addEventListener('offline', updateOnlineStatus);
+
+function updateOnlineStatus(event) {
+  var condition = navigator.onLine ? "online" : "offline";
+  document.body.className = condition;
+}

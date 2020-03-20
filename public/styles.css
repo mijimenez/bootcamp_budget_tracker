@@ -49,3 +49,14 @@ tr:nth-child(even) {
   width: 90%;
   margin: 0 auto;
 }
+
+/* Offline/online message */
+.default #connectionMessage:after{
+  content:"Track your budget online or offline";
+}
+.offline #connectionMessage:after{
+  content:"You are offline";
+}
+.online #connectionMessage:after{
+  content:"You are back online";
+}
